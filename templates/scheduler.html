@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+
+{% block title %}
+
+    <title>Block Scheduler</title>
+
+{% endblock %}
+
+{% block content %}
+    <p style="position: relative"><i>
+        <span class="highlight">{{total_events}}</span> events created and counting...</i>
+        <span style="position: absolute; right: 10px;"><span class="highlight">BY:</span> SHASHANK SINGH</span>
+    </p>
+
+    <form name="new_event" method="post" id="left" style="z-index: 1;">
+        <div class="label">Event Name</div>
+        <input type="text" name="name" value="{{name}}"><br><br>
+
+        <div class="label">Description</div>
+        <textarea name="description" style="max-width: 200px; height: 100px">{{description}}</textarea><br><br>
+
+        <div class="label">Attendees (Optional)</div>
+        <textarea title="Enter each attendee's email on a new line (without any additional spaces)"
+                  name="attendees" style="max-width: 200px; height: 80px">{{attendees}}</textarea><br><br>
+
+        <div class="label">Start Date</div>
+        <input type="date" name="date_start" value="{{date_start}}"><br><br>
+
+        <div class="label">End Date</div>
+        <input type="date" name="date_end" value="{{date_end}}"><br><br>
+        
+        <div class="label">Start Time</div>
+        <input type="time" name="time_start" value="{{time_start}}"><br><br>
+
+        <div class="label">End Time</div>
+        <input type="time" name="time_end" value="{{time_end}}"><br><br>
+
+        <div class="label">Campus</div>
+        <select name="campus" id="campus">
+            <option value="iskl_es">ISKL ES</option>
+            <option value="iskl_ms">ISKL HS/MS</option>
+        </select><br><br>
+
+        <div class="label">Day</div>
+        <span id="days">
+            <input id="1" type="checkbox" name="day" value="1"><label class="checkbox" for="1"></label><span>1</span>
+            <input id="2" type="checkbox" name="day" value="2"><label class="checkbox" for="2"></label><span>2</span>
+            <input id="3" type="checkbox" name="day" value="3"><label class="checkbox" for="3"></label><span>3</span>
+            <input id="4" type="checkbox" name="day" value="4"><label class="checkbox" for="4"></label><span>4</span>
+            <br>
+            <input id="5" type="checkbox" name="day" value="5"><label class="checkbox" for="5"></label><span>5</span>
+            <input id="6" type="checkbox" name="day" value="6"><label class="checkbox" for="6"></label><span>6</span>
+            <input id="7" type="checkbox" name="day" value="7"><label class="checkbox" for="7"></label><span>7</span>
+            <input id="8" type="checkbox" name="day" value="8"><label class="checkbox" for="8"></label><span>8</span>
+            <br><br>
+        </span>
+
+        <div class="label">Additional Calendars<br>(Optional)</div>
+        <textarea title="Refer to Help for details" name="cal_ids" style="max-width: 200px; height: 80px; white-space: nowrap;"></textarea><br><br>
+
+        <input type="submit" value="Create Event">
+    </form>
+    <div id="right">
+        <div class="error" name="error">{{error | safe}}</div>
+        <br><br>
+        <div class="label">Your Calendar</div>
+        <iframe src="http://www.google.com/calendar/embed?showTz=0&showPrint=0&mode=WEEK&src={{user}}&ctz=Asia/Kuala_Lumpur" style="margin-top: 20px;" width="860" height="1160" scrolling="no" frameBorder="2"></iframe>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+
+{% block title %}
+
+    <title>Help</title>
+
+{% endblock %}
+
+{% block content %}
+
+    <h2 style="color: #06C">Create Event</h2>
+    <p>
+        <span class="highlight">Event Name</span>: Enter the name of the event
+        <br><br>
+        <span class="highlight">Description</span>: Enter a text description of the event to provide sufficient information
+        <br><br>
+        <span class="highlight">Attendees (Optional)</span>: List of people to send the invite to. Please enter the email address of each person to invite with each email on a separate line without any other characters in between.
+        <br><br>
+        <span class="highlight">Start/End Date</span>: The app will create events between the specified date range. The Start Date is inclusive whereas the End Date is exclusive. For example: In order to create events from 10 August to 20 August. Your Start Date would be 08/10/2014 and your End Date would be 08/21/2014.
+        <br><br>
+        <span class="highlight">Start/End Time</span>: The app will create an event that starts at Start Time and ends at End Time. Date format should be hh:mm AM/PM (12-hour format)
+        <br><br>
+        <span class="highlight">Campus</span>: The campus whose Day system you want to use: Melawati (ES Day 1-6) or Ampang (MS/HS Day 1-8)
+        <br><br>
+        <span class="highlight">Day</span>: The Days (1-6 or 1-8) on which you want to create the event. You can select multiple days.
+        <br><br>
+        <span class="highlight">Additional Calendars (Optional)</span>: To add the events to additional calendars, you need to provide the calendars' <span class="highlight">Calendar ID</span>. To get your calendar's Calendar ID, go to Calendar Setings and scroll down to the Calendar Address entry. There, you will see the Calendar ID in the following format: (Calendar ID: <i>the calendar id</i>). Copy and paste that address in the Additional Calendars field with each ID for each additional calendar on a separate line with no other characters in between.
+        <br><br>
+    </p>
+
+    <h2 style="color: #06C">Delete Event</h2>
+    <p>
+        <span class="highlight">Event Name</span>: Enter the name of the event to delete (case-sensitive). The app will then delete ALL events with the exact given name. If you want to delete more selectively, please post your suggestion through the feedback feature and I'll try to include it.
+        <br><br>
+    </p>
+
+    <h2 style="color: #06C">Feedback</h2>
+    <p>
+        Here you can post your feedback/suggestions/complaint/(or thanks!).
+    </p>
+
+    <h2 style="color: #06C">Successful Creation of Event</h2>
+    <p>
+        <span class="highlight">Undo (button)</span>: If you accidentally created an event with the wrong details or have changed your mind, you can undo the creation of the event with the Undo button. If you want to delete some other events created earlier, use the Delete Event option instead.
+        <br><br>
+    </p>
+
+{% endblock %}

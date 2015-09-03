@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+
+{% block title %}
+
+    <title>Delete Events</title>
+
+{% endblock %}
+
+{% block content %}
+
+    <form name="delete_event" method="post" id="left">
+        <div class="label" title="Case-Sensitive">Event Name</div>
+        <input type="text" name="name" value="{{name}}"><br><br>
+
+        <div class="error" name="error">{{error}}</div>
+
+        <input type="submit" value="Delete Event">
+    </form>
+
+    <iframe id="right" src="http://www.google.com/calendar/embed?showTz=0&showPrint=0&mode=WEEK&src={{user}}&ctz=Asia/Kuala_Lumpur" style="margin-top: 20px" width="840" height="550" scrolling="no" frameBorder="2"></iframe>
+
+{% endblock %}

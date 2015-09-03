@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+
+{% block title %}
+
+    <title>Feedback</title>
+    {% if submitted %}
+        <meta http-equiv="refresh" content="5;url=/">
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+    {% if not submitted %}
+        <h2 style="margin-bottom: 10px;">FEEDBACK</h2>
+        <form method="post">
+            <textarea name="feedback">Please enter your feedback here</textarea>
+
+            <br>
+            <span class="error">{{error}}</span>
+            <br>
+
+            <input style="font-size: 16px;" type="submit" value="Submit Feedback">
+        </form>
+    {% else %}
+        <h2>Thank you for your submission</h2>
+        <h3>Redirecting to main page ...</h3>
+    {% endif %}
+
+
+{% endblock %}

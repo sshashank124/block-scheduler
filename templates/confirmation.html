@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+
+{% block title %}
+
+    <title>Deletion Confirmation</title>
+
+{% endblock %}
+
+{% block content %}
+
+    <h2>A total of <span class="highlight">{{num_events}}</span> events will be deleted<br>Continue?</h2>
+
+    <form name="delete_confirmation" method="post">
+        <input type="submit" name="delete" value="Yes">
+        <input type="submit" name="delete" value="No">
+    </form>
+
+{% endblock %}

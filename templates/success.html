@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Calendar Updated</title>
+
+    <style>
+        .label {
+            float: left;
+            min-width: 160px;
+            margin-right: 10px;
+        }
+
+        .result {
+            color: rgb(128,255,0);
+            font-size: 18px;
+        }
+
+        #left {
+            float: left;
+            position: relative;
+            margin-right: 70px;
+            max-width: 350px;
+        }
+
+        #right {
+            position: relative;
+        }
+    </style>
+
+{% endblock %}
+
+{% block content %}
+
+    <h3 style="margin-bottom: 25px;">Hi, <span class="highlight">{{user}}</span>. Your calendar was updated successfully!</h3>
+
+    {% if added %}
+    <div id="left">
+        <h2>EVENT DETAILS</h2>
+
+        <span class="label">Name: </span>
+        <span class="result" name="name">{{name}}</span><br><br>
+
+        <span class="label">Start Date: </span>
+        <span class="result" name="date_start">{{date_start}}</span><br><br>
+
+        <span class="label">End Date: </span>
+        <span class="result" name="date_end">{{date_end}}</span><br><br>
+
+        <span class="label">Start Time: </span>
+        <span class="result" name="time_start">{{time_start}}</span><br><br>
+
+        <span class="label">End Time: </span>
+        <span class="result" name="time_end">{{time_end}}</span><br><br>
+
+        <span class="label">Day(s): </span>
+        <span class="result" name="day">{{day}}</span><br><br>
+
+        <span class="label">Events Created: </span>
+        <span class="result" name="num_events">{{num_events}}</span>
+        <br>
+        <br>
+
+        <form method="post">
+            <input type="submit" value="Undo">
+        </form>
+        <br>
+
+        <div class="label" name="feedback_description" style="padding: 5px; border: 2px solid; border-radius: 10px;">
+            Please submit any <span class="result">feedback</span>,
+            <span class="result">complaints</span>
+            or <span class="result">suggestions for improvement</span> here:<br>
+            <a class="highlight" style="font-family: verdana; font-weight: bold;" href="/feedback">Submit Feedback</a>
+        </div>
+    </div>
+    {% else %}
+    <h3 id="left" style="margin-top: 25px"><span class="highlight">{{num}}</span> events removed</h3>
+    {% endif %}
+
+    <iframe id="right" src="http://www.google.com/calendar/embed?showTz=0&showPrint=0&mode=WEEK&src={{user}}&ctz=Asia/Kuala_Lumpur" style="margin-top: 25px" width="730" height="600" scrolling="no" frameBorder="2"></iframe>
+
+{% endblock %}

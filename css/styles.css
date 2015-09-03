@@ -1,0 +1,147 @@
+body {
+    background-size: cover;
+    font-family: Nunito, sans-serif;
+    font-size: 18px;
+    margin-left: 20px;
+    color: #EEEEEE;
+    padding: 15px;
+}
+
+input, select, textarea {
+    border-radius: 4px;
+    border: 2px solid white;
+    outline: none;
+    margin-bottom: 5px;
+    margin-top: 2px;
+    font-family: monospace;
+}
+
+input[type=submit] {
+    background: #FF4500;
+    width: 225px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font: bold 24px Nunito;
+    color: white;
+}
+
+input[type=submit]:hover {
+    background: #FF6520;
+}
+
+input[type=submit]:active {
+    background: #EF3500;
+}
+
+input[type=text], input[type=date], input[type=time] {
+    width: 210px;
+    height: 20px;
+    padding: 5px;
+}
+
+textarea {
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #FF4500;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox] + label.checkbox {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #FFFF00;
+    border: 2px outset #FFFF88;
+    border-radius: 3px;
+    margin: 0px 5px -1px;
+    cursor: pointer;
+}
+
+input[type=checkbox]:checked + label.checkbox {
+    border-style: inset;
+    background-color: #FF4500;
+}
+
+.label {
+    font-size: 20px;
+}
+
+.error {
+    color: red;
+}
+
+h1 {
+    display: block;
+    color: #DFDF00;
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+hr {
+    margin-bottom: 10px;
+    height: 4px;
+    border: none;
+    color: #DFDF00;
+    background-color: #DFDF00;
+    border-radius: 4px;
+}
+
+.highlight {
+    color: #FF4500;
+}
+
+#left {
+    float: left;
+    position: relative;
+    margin-right: 100px;
+}
+
+#right {
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    position: relative;
+}
+
+.pages {
+    font-weight: bold;
+    position: absolute;
+    border: 3px outset;
+    border-color: white;
+    padding: 4px;
+    border-radius: 5px;
+    top: 9px;
+    background-color: white;
+}
+
+.pages:hover {
+    color: #FFFF00;
+    top: 10px;
+    border: 3px inset;
+    border-color: #FF4500;
+    background-color: #777777;
+}
+
+select {
+    width: 224px;
+    height: 34px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+iframe {
+    border-radius: 6px;
+}

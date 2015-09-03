@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        {% block title %}
+
+        {% endblock %}
+
+        <style>
+            body {
+                background-color: rgb(30,30,30);
+            }
+        </style>
+
+        <link type="text/css" rel="stylesheet" href="/css/styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Nunito:700' rel='stylesheet' type='text/css'>
+
+    </head>
+
+    <body>
+
+        <!-- Try going to block-scheduler.appspot.com/secret -->
+
+        <div class="title">
+            <h1>Block Scheduler - {{page}}</h1><hr>
+
+            <a href="/"><div class="pages highlight" style="right: 310px">Create Events</div></a>
+            <a href="/delete"><div class="pages highlight" style="right: 168px">Delete Events</div></a>
+            <a href="/feedback"><div class="pages highlight" style="right: 64px">Feedback</div></a>
+            <a href="/help"><div class="pages highlight" style="right: 0px">Help</div></a>
+        </div>
+        
+        {% block content %}
+
+        {% endblock %}
+        
+    </body>
+</html>
